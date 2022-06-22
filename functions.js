@@ -1,7 +1,12 @@
 const wordsList = new Set();
 
 function addWord(word) {
-    wordsList.add(word.toLowerCase());
+    var regex = /^[A-Za-z]+$/;
+    if (regex.test(word)) {
+        wordsList.add(word.toLowerCase());
+    } else {
+        alert("This is not a word.")
+    }
 }
 
 function searchWord(word) {
@@ -14,4 +19,12 @@ function searchWord(word) {
 
 function deleteWord(word) {
     wordsList.delete(word.toLowerCase());
+}
+
+function displayAll() {
+    let text = "";
+    for (const x of wordsList.values()) {
+      text += x + "<br>";
+    }
+    document.getElementById("display").innerHTML = text;
 }

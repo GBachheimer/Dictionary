@@ -10,11 +10,13 @@
     </head>
     <body>
         <form class = "form-control-lg container-fluid" onsubmit="return false">
-          <label for = "newWord">Add or search words:</label>
+          <label for = "newWord">Enter a word:</label>
           <input id = "newWord" type = "text">
           <button type = "button" class = "btn btn-large btn-primary" onclick = "addWord(document.getElementById('newWord').value)">Add</button>
           <button type = "button" class = "btn btn-large btn-primary" onclick = "searchWord(document.getElementById('newWord').value)">Search</button>
           <button type = "button" class = "btn btn-large btn-primary" onclick = "deleteWord(document.getElementById('newWord').value)">Delete</button>
+          <button type = "button" class = "btn btn-large btn-primary" onclick = "displayAll()">Display all</button>
         </form>
+        <p id = "display"></p>
     </body>
 </html>
