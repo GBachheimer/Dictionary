@@ -4,20 +4,22 @@ function addWord(word) {
     var regex = /^[A-Za-z]+$/;
     if (regex.test(word)) {
         wordsList.add(word.toLowerCase());
+        document.getElementById("display").innerHTML = "Your word was added successfully.";
     } else {
-        alert("This is not a word.")
+        document.getElementById("display").innerHTML = "This is not a word.";
     }
 }
 
 function searchWord(word) {
     if (wordsList.has(word.toLowerCase())) {
-        alert("This word is already in this dictionary.");
+        document.getElementById("display").innerHTML = "This word is already in this dictionary.";
     } else {
-        alert("OOOPS! This word is not in this dictionary.")
+        document.getElementById("display").innerHTML = "OOOPS! This word is not in this dictionary.";
     }
 }
 
 function deleteWord(word) {
+    document.getElementById("display").innerHTML = "Word: " + word + " was deleted successfully.";
     wordsList.delete(word.toLowerCase());
 }
 
